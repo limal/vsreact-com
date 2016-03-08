@@ -8,3 +8,4 @@ build/Release
 node_modules
 .npm
 /*.svg
+vsreact.bundle.js
