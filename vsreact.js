@@ -1,5 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './js/components/Hello.jsx';
+import {Router, Route, hashHistory} from 'react-router';
+import Home from './js/components/Home.jsx';
 
-ReactDOM.render(<Hello />, document.getElementById('app'));
+ReactDOM.render(
+	<Router history={hashHistory}>
+		<Route path="/" component={Home}>
+		</Route>
+	</Router>,
+	document.getElementById('app')
+);
