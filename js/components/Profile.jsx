@@ -6,10 +6,10 @@ import Notes from './Notes/Notes.jsx';
 export default class Profile extends React.Component {
     constructor(props) {
         super(props);
-
+        this.username = this.props.params.username;
         this.state = {
             bio: {},
-            notes: [],
+            notes: ['a', 'b', 'c'],
             repos: []
         }
     }
@@ -18,10 +18,10 @@ export default class Profile extends React.Component {
         return (
             <div className="profile">
                 <div className="user">
-                    <UserProfile username={this.props.params.username} bio={this.state.bio} />
+                    <UserProfile username={this.username} bio={this.state.bio} />
                 </div>
                 <div className="repos">
-                    <Repos repos={this.state.repos} />
+                    <Repos username={this.username} repos={this.state.repos} />
                 </div>
                 <div className="notes">
                     <Notes notes={this.state.notes} />
