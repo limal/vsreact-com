@@ -9,7 +9,7 @@ export default class NotesList extends React.Component {
                 {notes.map((note, index) => (
                     <li className="notesListItem" key={index}>
                         {note}
-                        <a onClick={(index) => removeNote(index)}>X</a>
+                        <a onClick={() => this.props.removeNote(index)}>X</a>
                     </li>
                 ))}
             </ul>

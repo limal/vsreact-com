@@ -7,7 +7,7 @@ export default class Notes extends React.Component {
         return (
             <div className="notes">
                 <h3>Notes</h3>
-                <NotesList notes={this.props.notes} />
+                <NotesList notes={this.props.notes} removeNote={this.props.removeNote} />
                 <AddNote username={this.props.username} addNote={this.props.addNote} />
             </div>
         )
@@ -17,5 +17,6 @@ export default class Notes extends React.Component {
 Notes.propTypes = {
     username: React.PropTypes.string.isRequired,
     notes: React.PropTypes.array.isRequired,
-    addNote: React.PropTypes.func.isRequired
+    addNote: React.PropTypes.func.isRequired,
+    removeNote: React.PropTypes.func.isRequired
 };

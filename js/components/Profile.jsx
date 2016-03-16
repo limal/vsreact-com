@@ -39,6 +39,15 @@ export default class Profile extends React.Component {
         });
     }
 
+    handleRemoveNote(index) {
+        var data = this.state.notes;
+        data[index] = null;
+
+        base.post(this.username, {
+            data: data
+        });
+    }
+
     init(username) {
         this.ref = base.bindToState(username, {
             context: this,
@@ -62,7 +71,8 @@ export default class Profile extends React.Component {
                     <Notes
                         username={this.props.params.username}
                         notes={this.state.notes}
-                        addNote={(newNote) => this.handleAddNote(newNote)} />
+                        addNote={(newNote) => this.handleAddNote(newNote)}
+                        removeNote={(index) => this.handleRemoveNote(index)} />
                 </div>
             </div>
         )
