@@ -14,6 +14,7 @@ export default class Profile extends React.Component {
             notes: ['a', 'b', 'c'],
             repos: []
         }
+        this.username = '';
     }
 
     componentDidMount() {
@@ -30,7 +31,12 @@ export default class Profile extends React.Component {
     }
 
     handleAddNote(newNote) {
-        //this.ref.child(this.username).child(this.state.notes.length).set(newNote);
+        var data = this.state.notes;
+        data[this.state.notes.length] = newNote;
+
+        base.post(this.username, {
+            data: data
+        });
     }
 
     init(username) {
@@ -40,7 +46,7 @@ export default class Profile extends React.Component {
             state: 'notes'
         });
 
-        console.log(this.ref);
+        this.username = username;
     }
 
     render() {
