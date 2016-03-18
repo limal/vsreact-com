@@ -4,6 +4,9 @@ module.exports = {
 		path: __dirname,
 		filename: "./vsreact.bundle.js"
 	},
+	devServer: {
+		inline: true
+	},
 	module: {
 		loaders: [
 			{
