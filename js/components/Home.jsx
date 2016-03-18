@@ -1,4 +1,6 @@
 import React from 'react';
+import Cart from './Cart.jsx';
+import Catalog from './Catalog.jsx';
 
 export default class Home extends React.Component {
     render() {
@@ -10,7 +12,13 @@ export default class Home extends React.Component {
                     </div>
                 </nav>
                 <div className="container">
-                    {this.props.children}
+                    <div className="row">
+                        <Cart />
+                        <Catalog />
+                    </div>
+                    <div className="row">
+                        {this.props.children}
+                    </div>
                 </div>
             </div>
         )

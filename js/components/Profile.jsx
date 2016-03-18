@@ -3,7 +3,6 @@ import UserProfile from './Github/UserProfile.jsx';
 import Repos from './Github/Repos.jsx';
 import Notes from './Notes/Notes.jsx';
 import Rebase from 're-base';
-import Catalog from './Catalog.jsx';
 
 const base = new Rebase.createClass('https://fiery-heat-9003.firebaseio.com/');
 
@@ -62,7 +61,6 @@ export default class Profile extends React.Component {
     render() {
         return (
             <div className="profile">
-                <Catalog />
                 <div className="user">
                     <UserProfile username={this.props.params.username} bio={this.state.bio} />
                 </div>
